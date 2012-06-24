@@ -16,7 +16,7 @@ There are several ways to provide this information to the library.
 You can set the login, username, repo and oauth token when you instantiate the library:
 
 ```ruby
-uploader = GithubDownloads::Uploader.new(login, username, repository, token)
+uploader = GithubDownloads::Uploader.new(login, username, repo, token)
 ```
 
 You can also let the library use the login, username and repository of the .git repository of the project in which you are using this library. This works basically by getting the values from git config. So the `login` is retrieved via `git config github.user` and the `username` and `repo` are extracted from `git config remote.origin.url`:
