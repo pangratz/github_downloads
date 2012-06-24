@@ -45,7 +45,7 @@ uploader.authorize
 
 The `authorize` checks if there is a file named `.github-upload-token`. If so, it uses the OAuth token which is stored in this file. If there is no such file, the library will ask you to enter the GitHub password. Then GitHub is contacted via its API and an OAuth token is retrieved which is then stored in the `.github-upload-token` for further usage. 
 
-If you want to revoke the access of this library, simply revoke the access to the created application `GitHub Downloads Gem (API)` on https://github.com/settings/applications
+If you want to revoke the access of this library, simply revoke the access to the created application with the name `GitHub Downloads Gem (API)` on https://github.com/settings/applications
 
 If you don't trust this authorize method, you can create one yourself as described in http://developer.github.com/v3/oauth/#create-a-new-authorization
 
@@ -64,4 +64,24 @@ uploader = GithubDownloads::Uploader.new
 uploader.authorize
 
 uploader.upload_file("my-library.latest.js", "Latest build", "build/latest.js")
+```
+
+## Sample usage inside Rakefile
+
+One use case for this library is to provide a task in your `Rakefile` which uploads the latest build of your library to the GitHub repository. 
+
+```ruby
+require 'github_downloads'
+
+desc "builds project and stores file in target/build.js"
+task :dist do
+  ...
+end
+
+desc "upload latest build to GitHub repository"
+task :upload_latest, :dist do
+  uploader = GithubDownloads::Uploader.new
+  uploader.authorize
+  uploader.upload_file("project-latest.js", "Latest build of project", "target/build.js")
+end
 ```
