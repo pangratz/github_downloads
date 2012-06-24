@@ -1,5 +1,5 @@
 require 'test/unit'
-require 'github_downloads/uploader'
+require 'github_downloads'
 
 class GithubDownloadsTest < Test::Unit::TestCase
   def teardown
