@@ -6,8 +6,8 @@ require 'github_downloads/version'
 Gem::Specification.new do |s|
   s.name          = "github_downloads"
   s.version       = GithubDownloads::VERSION
-  s.authors       = ["Clemens Müller"]
-  s.email         = ["cmueller.418@gmail.com"]
+  s.authors       = ["Clemens Müller", "Peter Wagenet"]
+  s.email         = ["cmueller.418@gmail.com", "peter.wagenet@gmail.com"]
   s.homepage      = "https://github.com/pangratz/github_downloads"
   s.summary       = "Upload files to GitHub Downloads"
   s.description   = "Library to upload files to GitHub Downloads section of a specific repository"
