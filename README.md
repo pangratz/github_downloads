@@ -85,3 +85,7 @@ task :upload_latest => :dist do
   uploader.upload_file("project-latest.js", "Latest build of project", "target/build.js")
 end
 ```
+
+# Origin
+
+This library is extracted from [https://github.com/emberjs/ember.js/lib/github_uploader.rb](https://github.com/emberjs/ember.js/blob/7598f93ac9d75368d1bb838af511b81a86aa7f61/lib/github_uploader.rb)
