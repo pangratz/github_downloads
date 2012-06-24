@@ -2,7 +2,7 @@
 
 Simple library to upload files to GitHub repository. It authenticates via OAuth token to GitHub. The token itself will be stored in the file `.github-upload-token` in the root directory of the project.
 
-## Usage
+## Configuration
 
 The library needs the following settings so it can upload files to a specific GitHub repository:
 
@@ -35,6 +35,7 @@ ENV['GH_OAUTH_TOKEN'] = "12345"
 
 uploader = GithubDownloads::Uploader.new
 ```
+
 If you don't have an OAuth token yet, you can use the `authorize` method of the `Uploader`:
 
 ```ruby
@@ -47,3 +48,20 @@ The `authorize` checks if there is a file named `.github-upload-token`. If so, i
 If you want to revoke the access of this library, simply revoke the access to the created application `GitHub Downloads Gem (API)` on https://github.com/settings/applications
 
 If you don't trust this authorize method, you can create one yourself as described in http://developer.github.com/v3/oauth/#create-a-new-authorization
+
+## Uploading a file
+
+After initialization, you can finally upload a file to the specified repository. This is achieved by invoking the `upload_file` method. This method takes 3 arguments:
+
+- **filename** : name of the file in the Downloads section of GitHub repository
+- **description** : description of the file
+- **file** : path to the file, which shall be uploaded
+
+If there is already a file with specified `filename`, it is replaced.
+
+```ruby
+uploader = GithubDownloads::Uploader.new
+uploader.authorize
+
+uploader.upload_file("my-library.latest.js", "Latest build", "build/latest.js")
+```
