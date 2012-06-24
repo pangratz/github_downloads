@@ -2,6 +2,16 @@
 
 Simple library to upload files to GitHub repository. It authenticates via OAuth token to GitHub. The token itself will be stored in the file `.github-upload-token` in the root directory of the project.
 
+## Installation
+
+Install the gem by
+
+    gem install github_downloads
+
+or put it in your Gemfile and run `bundle install`
+
+    gem "github_downloads"
+
 ## Configuration
 
 The library needs the following settings so it can upload files to a specific GitHub repository:
