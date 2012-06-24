@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    github_downloads (0.0.1)
-      github_api
-      rest-client
+    github_downloads (0.1.0)
+      github_api (~> 0.6.0)
+      rest-client (~> 1.6.7)
 
 GEM
   remote: http://rubygems.org/

@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.platform      = Gem::Platform::RUBY
   s.require_paths = ['lib']
 
-  s.add_runtime_dependency "rest-client"
-  s.add_runtime_dependency "github_api"
+  s.add_runtime_dependency "rest-client", "~> 1.6.7"
+  s.add_runtime_dependency "github_api", "~> 0.6.0"
 
   s.add_development_dependency "rake"
 end
