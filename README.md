@@ -79,7 +79,7 @@ task :dist do
 end
 
 desc "upload latest build to GitHub repository"
-task :upload_latest, :dist do
+task :upload_latest => :dist do
   uploader = GithubDownloads::Uploader.new
   uploader.authorize
   uploader.upload_file("project-latest.js", "Latest build of project", "target/build.js")
