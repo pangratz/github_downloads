@@ -1,6 +1,6 @@
 # github_downloads
 
-Simple library to upload files to GitHub repository. It authenticates via OAuth token to GitHub. The token itself will be stored in the file `.github-upload-token` in the root directory of the project.
+Simple library to upload files to the Downloads section of a GitHub repository. It authenticates via OAuth token to GitHub.
 
 ## Installation
 
