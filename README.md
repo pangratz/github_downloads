@@ -99,3 +99,10 @@ end
 # Origin
 
 This library is extracted from [https://github.com/emberjs/ember.js/lib/github_uploader.rb](https://github.com/emberjs/ember.js/blob/7598f93ac9d75368d1bb838af511b81a86aa7f61/lib/github_uploader.rb)
+
+# Release
+
+To release a new version do
+
+    gem bump
+    gem release --tags
