@@ -12,6 +12,11 @@ class GithubDownloadsTest < Test::Unit::TestCase
     ENV['GH_REPOSITORY'] = "my-repo"
     ENV['GH_OAUTH_TOKEN'] = "12345"
     uploader = GithubDownloads::Uploader.new
+
+    assert_equal "my-login", uploader.login
+    assert_equal "my-username", uploader.username
+    assert_equal "my-repo", uploader.repo
+    assert_equal "12345", uploader.token
   end
 
   def test_authorize
