@@ -104,5 +104,6 @@ This library is extracted from [https://github.com/emberjs/ember.js/lib/github_u
 
 To release a new version do
 
+    gem install gem-release
     gem bump
     gem release --tags
