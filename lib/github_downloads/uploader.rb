@@ -5,6 +5,8 @@ require "json"
 module GithubDownloads
   class Uploader
 
+    attr_reader :login, :username, :repo, :token
+
     def initialize(login=nil, username=nil, repo=nil, token=nil, root=Dir.pwd)
       @login    = init_login(login)
       @username = init_username(username)
