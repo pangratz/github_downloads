@@ -82,6 +82,7 @@ module GithubDownloads
       
       # add entry to .gitignore if not already exists
       gitignore = File.expand_path(".gitignore", @root)
+      system "touch #{gitignore}"
       includes = File.open(gitignore).lines.any? { |line| line.chomp == '.github-upload-token' }
       if !includes
         File.open(gitignore, "a") do |f|
