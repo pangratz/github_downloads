@@ -73,7 +73,7 @@ module GithubDownloads
           :note => "GitHub Downloads Gem",
           :note_url => "https://github.com/pangratz/github_downloads"
         }
-        response = RestClient.post "https://#{@login}:#{pw}@api.github.com/authorizations", payload.to_json, :content_type => :json
+        response = RestClient.post "https://#{CGI.escape(@login)}:#{CGI.escape(pw)}@api.github.com/authorizations", payload.to_json, :content_type => :json
         @token = JSON.parse(response.to_str)["token"]
       end
 
