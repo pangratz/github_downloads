@@ -106,4 +106,4 @@ To release a new version do
 
     gem install gem-release
     gem bump
-    gem release --tags
+    gem release --tag
